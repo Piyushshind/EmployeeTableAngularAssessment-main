@@ -9,19 +9,20 @@
   class="container"
 >
   <table
-    style="align-items: center; width: 700px; justify-content: center"
+    style="align-items: center; width: 1300px; justify-content: center"
     border="2"
   >
     <thead>
       <tr>
         <th>Name</th>
         <th>Total Time Worked</th>
+        <th>EntryNotes</th>
       </tr>
     </thead>
     <tbody>
       <tr
         *ngFor="let employee of data"
-        style="background-color: rgb(255, 254, 244)"
+        style="background-color: rgb(230, 252, 252)"
       >
         <td>{{ employee["EmployeeName"] }}</td>
         <td>
@@ -29,6 +30,7 @@
             calculateTotalTime(employee["StarTimeUtc"], employee["EndTimeUtc"])
           }}
         </td>
+        <td>{{employee["EntryNotes"]}}</td>
       </tr>
     </tbody>
   </table>
