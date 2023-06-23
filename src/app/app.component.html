@@ -1,0 +1,35 @@
+<div style="align-items: center; display: flex; justify-content: center">
+  <div style="width: 800px">
+    <canvas id="myChart"></canvas>
+  </div>
+</div>
+
+<div
+  style="align-items: center; display: flex; justify-content: center"
+  class="container"
+>
+  <table
+    style="align-items: center; width: 700px; justify-content: center"
+    border="2"
+  >
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Total Time Worked</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr
+        *ngFor="let employee of data"
+        style="background-color: rgb(255, 255, 0)"
+      >
+        <td>{{ employee["EmployeeName"] }}</td>
+        <td>
+          {{
+            calculateTotalTime(employee["StarTimeUtc"], employee["EndTimeUtc"])
+          }}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
